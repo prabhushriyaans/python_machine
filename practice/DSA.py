@@ -84,3 +84,42 @@ class LinkedList:
         while current is not None:
             print(current.data,end="--")
             current=current.next
+
+class LKL:
+    def __init__(self):
+        self.L=[]
+    def node(self,n):
+        self.L.append(n)
+    def insert_before(self,pn,nn):
+        if pn in self.L:
+            idx=self.L.index(pn)
+            self.L.insert(idx,nn)
+        else:
+            print(f"Node {pn} not present.")
+    def insert_after(self,pn,nn):
+        if pn in self.L:
+            idx=self.L.index(pn)
+            self.L.insert(idx+1,nn)
+        else:
+            print(f"Node {pn} not present.")
+    def traverse(self):
+        if len(self.L)==0:
+            print("The list is empty.")
+        else:
+            for i in self.L:
+                print(i,end="--")
+            print(" ")
+    def delete(self,n):
+        if n in self.L:
+            self.L.remove(n)
+        else:
+            print(f"Node {n} not present.")
+    def search(self,n):
+        if n in self.L:
+            print(f"Node {n} is present.")
+        else:
+            print(f"Node {n} not present.")
+    def drop(self):
+        del self.L
+    def truncate(self):
+        self.L=[]
